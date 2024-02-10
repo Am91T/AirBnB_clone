@@ -16,6 +16,7 @@ class TestFileStorage(unittest.TestCase):
         Creates an instance of FileStorage.
         """
         self.storage = FileStorage()
+        self.storage._FileStorage__objects = {}
 
     def tearDown(self):
         """
