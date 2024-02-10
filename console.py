@@ -8,7 +8,8 @@ class HBNBCommand(cmd.Cmd):
     Attributes:
         prompt (str): The command prompt.
     """
-    prompt = '(hbnb) '
+
+    prompt = "(hbnb) "
 
     def emptyline(self):
         """Do nothing when an empty line is entered"""
@@ -40,5 +41,5 @@ class HBNBCommand(cmd.Cmd):
         print("Exit the program")
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     HBNBCommand().cmdloop()
