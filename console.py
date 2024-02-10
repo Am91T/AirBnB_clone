@@ -1,9 +1,13 @@
 #!/usr/bin/python3
+"""Defines the HBnB console."""
 import cmd
 
 
 class HBNBCommand(cmd.Cmd):
-
+    """Defines the HolbertonBnB command interpreter.
+    Attributes:
+        prompt (str): The command prompt.
+    """
     prompt = '(hbnb) '
 
     def emptyline(self):
