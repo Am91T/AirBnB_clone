@@ -1,10 +1,11 @@
 #!/usr/bin/python3
-"""Defines the HBnB console."""
+"""This module defines the HBnB console."""
+
 import cmd
 
-
 class HBNBCommand(cmd.Cmd):
-    """Defines the HolbertonBnB command interpreter.
+    """This class defines the HolbertonBnB command interpreter.
+
     Attributes:
         prompt (str): The command prompt.
     """
@@ -15,22 +16,32 @@ class HBNBCommand(cmd.Cmd):
         pass
 
     def do_quit(self, arg):
-        """Quit command to exit the program"""
+        """Quit command to exit the program
+        
+        Args:
+            arg (str): Arguments passed to the command (ignored).
+        
+        Returns:
+            bool: True to exit the program.
+        """
         return True
 
     def do_EOF(self, arg):
-        """Exit the program when EOF is reached"""
+        """Exit the program when EOF is reached
+        
+        Args:
+            arg (str): Arguments passed to the command (ignored).
+        """
         print()
         return True
 
     def help_quit(self):
-        """Help message for quit command"""
+        """Provide help message for quit command"""
         print("Quit command to exit the program")
 
     def help_EOF(self):
-        """Help message for EOF (Ctrl+D)"""
+        """Provide help message for EOF (Ctrl+D)"""
         print("Exit the program")
-
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
