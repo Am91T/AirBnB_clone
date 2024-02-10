@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""test file storage"""
 import unittest
 import os
 from models.engine.file_storage import FileStorage
@@ -7,11 +7,21 @@ from models.base_model import BaseModel
 
 
 class TestFileStorage(unittest.TestCase):
-
+    """
+    TestFileStorage class to test the FileStorage class methods.
+    """
     def setUp(self):
+        """
+        Method to set up the test environment.
+        Creates an instance of FileStorage.
+        """
         self.storage = FileStorage()
 
     def tearDown(self):
+        """
+        Method to clean up after each test.
+        Removes the file created by FileStorage if it exists.
+        """
         if os.path.exists(self.storage._FileStorage__file_path):
             os.remove(self.storage._FileStorage__file_path)
 
