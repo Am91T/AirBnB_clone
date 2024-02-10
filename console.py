@@ -4,7 +4,7 @@
 import cmd
 
 class HBNBCommand(cmd.Cmd):
-    """This class defines the HolbertonBnB command interpreter.
+    """This class defines the alxBnB command interpreter.
 
     Attributes:
         prompt (str): The command prompt.
