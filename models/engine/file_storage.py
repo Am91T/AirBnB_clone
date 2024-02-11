@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """
-Module defining FileStorage class.
+This module defines a class to manage file storage for hbnb clone.
+Module: file_storage.py
+Defines a `FileStorage` class.
 """
-
 import json
 from models.base_model import BaseModel
 from models.user import User
@@ -10,7 +11,10 @@ from models.user import User
 
 class FileStorage:
     """
-    Serializes and deserializes JSON file to instances.
+    serializes instances to a JSON file and
+    deserializes JSON file to instances.
+    __file_path: path to the JSON file.
+    __objects: objects will be stored.
     """
 
     __file_path = "file.json"
@@ -41,7 +45,8 @@ class FileStorage:
 
     def reload(self):
         """
-        Deserializes the JSON file to __objects.
+        deserializes the JSON file to __objects only if the JSON
+        file exists; otherwise, does nothing.
         """
         try:
             with open(FileStorage.__file_path, 'r') as file:
