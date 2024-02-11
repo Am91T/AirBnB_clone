@@ -4,12 +4,17 @@
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
     """Command interpreter class."""
 
     prompt = "(hbnb) "
+    __classes = {
+        "BaseModel",
+        "User",
+    }
 
     def do_quit(self, arg):
         """Quit command to exit the program."""
@@ -89,7 +94,11 @@ class HBNBCommand(cmd.Cmd):
         elif args[0] not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
         else:
-            print([str(obj) for key, obj in all_objs.items() if key.split('.')[0] == args[0]])
+            result = []
+            for key, obj in all_objs.items():
+                if key.split('.')[0] == args[0]:
+                    result.append(obj)
+                print(result)
 
     def do_update(self, arg):
         """Updates an instance."""
