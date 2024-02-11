@@ -7,6 +7,7 @@ Module defining HBNBCommand class for the command interpreter.
 import cmd
 from models.base_model import BaseModel
 from models import storage
+from models.user import User
 
 
 class HBNBCommand(cmd.Cmd):
@@ -15,6 +16,10 @@ class HBNBCommand(cmd.Cmd):
     Command interpreter class.
     """
     prompt = "(hbnb) "
+    __classes = {
+        "BaseModel",
+        "User",
+        }
 
     def do_quit(self, arg):
         """
