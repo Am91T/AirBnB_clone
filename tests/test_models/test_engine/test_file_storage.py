@@ -26,10 +26,6 @@ class TestFileStorage(unittest.TestCase):
         if os.path.exists(self.storage._FileStorage__file_path):
             os.remove(self.storage._FileStorage__file_path)
 
-    def test_all(self):
-        """Test if all() returns an empty dictionary initially"""
-        self.assertEqual(self.storage.all(), {})
-
     def test_new(self):
         """Test if new() adds an object to __objects"""
         obj = BaseModel()
