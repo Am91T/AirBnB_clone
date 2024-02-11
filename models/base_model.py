@@ -7,6 +7,7 @@ import uuid
 from datetime import datetime
 import models
 
+
 class BaseModel:
     """
     Defines common attributes/methods for other classes.
@@ -43,7 +44,7 @@ class BaseModel:
 
     def save(self):
         """
-        Updates updated_at attribute with current datetime and calls save method of storage.
+        Updates updated_at attribute with current datetime.
         """
         self.updated_at = datetime.now()
         models.storage.save()

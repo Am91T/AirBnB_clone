@@ -1,54 +1,39 @@
 #!/usr/bin/python3
-"""
-Module defining HBNBCommand class for the command interpreter.
-"""
+"""Module defining HBNBCommand class for the command interpreter."""
 
 import cmd
 from models.base_model import BaseModel
 from models import storage
 
+
 class HBNBCommand(cmd.Cmd):
-    """
-    Command interpreter class.
-    """
+    """Command interpreter class."""
 
     prompt = "(hbnb) "
 
     def do_quit(self, arg):
-        """
-        Quit command to exit the program.
-        """
+        """Quit command to exit the program."""
         return True
 
     def do_EOF(self, arg):
-        """
-        Exit the program when EOF is reached.
-        """
+        """Exit the program when EOF is reached."""
         print()
         return True
 
     def emptyline(self):
-        """
-        Do nothing when an empty line is entered.
-        """
+        """Do nothing when an empty line is entered."""
         pass
 
     def help_quit(self):
-        """
-        Print help message for quit command.
-        """
+        """Print help message for quit command."""
         print("Quit command to exit the program\n")
 
     def help_EOF(self):
-        """
-        Print help message for EOF command.
-        """
+        """Print help message for EOF command."""
         print("Exit the program when EOF is reached\n")
 
     def do_create(self, arg):
-        """
-        Creates a new instance of BaseModel, saves it, and prints the id.
-        """
+        """Creates a new instance of BaseModel."""
         if not arg:
             print("** class name missing **")
         elif arg not in ["BaseModel", "User"]:
@@ -59,9 +44,7 @@ class HBNBCommand(cmd.Cmd):
             print(new_instance.id)
 
     def do_show(self, arg):
-        """
-        Prints the string representation of an instance.
-        """
+        """Prints the string of an instance."""
         args = arg.split()
         if not arg:
             print("** class name missing **")
@@ -78,9 +61,7 @@ class HBNBCommand(cmd.Cmd):
                 print(all_objs[key])
 
     def do_destroy(self, arg):
-        """
-        Deletes an instance based on the class name and id.
-        """
+        """Deletes an instance."""
         args = arg.split()
         if not arg:
             print("** class name missing **")
@@ -99,7 +80,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_all(self, arg):
         """
-        Prints all string representations of all instances.
+        Prints all string of all instances.
         """
         args = arg.split()
         all_objs = storage.all()
@@ -111,9 +92,7 @@ class HBNBCommand(cmd.Cmd):
             print([str(obj) for key, obj in all_objs.items() if key.split('.')[0] == args[0]])
 
     def do_update(self, arg):
-        """
-        Updates an instance based on the class name and id by adding or updating attribute.
-        """
+        """Updates an instance."""
         args = arg.split()
         all_objs = storage.all()
         if not arg:
@@ -134,6 +113,7 @@ class HBNBCommand(cmd.Cmd):
                 obj = all_objs[key]
                 setattr(obj, args[2], args[3])
                 obj.save()
+
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
