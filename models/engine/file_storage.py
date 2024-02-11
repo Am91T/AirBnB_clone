@@ -45,6 +45,7 @@ class FileStorage:
 
     def reload(self):
         """
+<<<<<<< HEAD
         deserializes the JSON file to __objects only if the JSON
         file exists; otherwise, does nothing.
         """
