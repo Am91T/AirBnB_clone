@@ -51,7 +51,7 @@ class HBNBCommand(cmd.Cmd):
         """
         if not arg:
             print("** class name missing **")
-        elif arg not in globals():
+        elif arg not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
         else:
             new_instance = globals()[arg]()
@@ -65,7 +65,7 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if not arg:
             print("** class name missing **")
-        elif args[0] not in globals():
+        elif args[0] not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
@@ -84,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
         args = arg.split()
         if not arg:
             print("** class name missing **")
-        elif args[0] not in globals():
+        elif args[0] not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
@@ -105,7 +105,7 @@ class HBNBCommand(cmd.Cmd):
         all_objs = storage.all()
         if not arg:
             print([str(obj) for obj in all_objs.values()])
-        elif args[0] not in globals():
+        elif args[0] not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
         else:
             print([str(obj) for key, obj in all_objs.items() if key.split('.')[0] == args[0]])
@@ -118,7 +118,7 @@ class HBNBCommand(cmd.Cmd):
         all_objs = storage.all()
         if not arg:
             print("** class name missing **")
-        elif args[0] not in globals():
+        elif args[0] not in ["BaseModel", "User"]:
             print("** class doesn't exist **")
         elif len(args) < 2:
             print("** instance id missing **")
