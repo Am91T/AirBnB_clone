@@ -4,3 +4,5 @@
 *__pycache__*
 *.o
 *.pyc
+*.json
+w3c_validator.py
